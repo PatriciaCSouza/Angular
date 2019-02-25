@@ -1,0 +1,32 @@
+<section class="two-way-binding">
+    <article>
+      <h3>Two-way data binding</h3>
+      <div>
+  
+        <!-- todos os inputs abaixo são iguais, mas mais simplificado -->
+  
+        <!--[value]="nome" do componente para o template-->
+        <!-- (input)="nome=$event.target.value" do template para o componente -->
+  
+        <input type="text" [value]="nome" (input)="nome = $event.target.value">
+  
+        <!-- ngModel é representacao de uma entidade, que pode ser um campo simples(string) e até mesmo um objeto -->
+        <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event">
+  
+        <!-- Two-way data binding -->
+  
+        <input type="text" [(ngModel)]="nome">
+  
+        <input type="text" bindon-ngModel="nome">
+        <p>Você digitou {{ nome }}</p>
+  
+        <div>
+          <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade.</p>
+  
+          <input type="text" [(ngModel)]="pessoa.nome">
+          <input type="text" [(ngModel)]="pessoa.idade">
+        </div>
+  
+      </div>
+    </article>
+  </section>

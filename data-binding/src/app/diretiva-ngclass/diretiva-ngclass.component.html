@@ -1,0 +1,12 @@
+<h1>
+  <i class="fa-star" [class.fas-fa-star]="!meuFavorito" [class.far-fa-star]="meuFavorito" (click)="onClick()"></i>
+</h1>
+
+<h2>Outra forma, só que usando ngClass</h2>
+
+<h1>
+  <i class="fa-star" [ngClass]="{
+      fas-fa-star: !meuFavorito,
+      far-fa-star: meuFavorito
+    }" (click)="onClick()"></i>
+</h1>
